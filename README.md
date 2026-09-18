@@ -1,80 +1,231 @@
-# Qwen3-Omni-30B-A3B TraitEvidenceGraph 便携推理包
+# TraitEvidenceGraphAgent
 
-该目录是在其他服务器上运行 **Qwen3-Omni-30B-A3B-Instruct +
-TraitEvidenceGraph** 所需的最小推理快照，覆盖：
+This repository contains the inference code for multimodal personality reasoning with **Qwen3-Omni-30B-A3B-Instruct + TraitEvidenceGraph**.
 
-- IELTS：dev 和 test；
-- RecruitView：dev 和 test；
-- 输入模态：Turn transcript + 原始视频帧 + 视频内同步音频；
-- 输出：每位受试者的 O/C/E/A/N 五项 reasoning，以及单独的 debug graph。
+The current release supports:
 
+- **IELTS**: dev and test splits
+- **RecruitView**: dev and test splits
+- **Multimodal input**:
+  - turn-level transcript
+  - video frames
+  - synchronized audio embedded in the video
+- **Output**:
+  - O/C/E/A/N personality reasoning for each subject
+  - corresponding debug evidence graphs
 
-## 1. 型号名称
+The source code is hosted on GitHub, while the media data are distributed separately through Hugging Face.
 
-本实验使用的官方开放权重名称是：
+---
 
-```text
-Qwen/Qwen3-Omni-30B-A3B-Instruct
+## 1. Clone the Repository
+
+```bash
+git clone https://github.com/lulvhui/TraitEvidenceGraphAgent.git
+cd TraitEvidenceGraphAgent
 ```
 
-
-官方资源：
-
-- Model card: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct
-- Official repository: https://github.com/QwenLM/Qwen3-Omni
-
-## 2. 目录要求
-
-最终目录应当是：
+The following instructions assume that the current working directory is the repository root:
 
 ```text
-qwen3_omni_30b_a3b_traitgraph/
+TraitEvidenceGraphAgent/
+```
+
+---
+
+## 2. Repository Structure
+
+The expected directory structure is:
+
+```text
+TraitEvidenceGraphAgent/
 ├── bridges/
 ├── configs/
+│   └── qwen3_omni_local.yaml
 ├── inputs/
-│   ├── IELTS/{dev,test}.input.jsonl
-│   └── RecruitView/{dev,test}.input.jsonl
+│   ├── IELTS/
+│   │   ├── dev.input.jsonl
+│   │   └── test.input.jsonl
+│   └── RecruitView/
+│       ├── dev.input.jsonl
+│       └── test.input.jsonl
 ├── manifests/
 ├── models/
 │   ├── Qwen3-Omni-30B-A3B-Instruct/
 │   └── bge-m3/
 ├── data/
-│   ├── IELTS/processed/video_turn_clips/...
-│   └── RecruitView/raw/videos/...
+│   ├── IELTS/
+│   └── RecruitView/
 ├── outputs/
 ├── scripts/
-└── src/
+├── src/
+├── requirements.txt
+└── requirements-optional-nf4.txt
 ```
 
-`models/`、`data/` 和 `outputs/` 初始不存在，需要下载/迁移数据后创建。
+The following directories are not included directly in the GitHub repository and need to be prepared on the target server:
 
-## 3. 需要下载的模型
+```text
+models/
+data/
+outputs/
+```
+
+---
+
+## 3. Model Setup
 
 ### 3.1 Qwen3-Omni-30B-A3B-Instruct
 
+The main backbone used in this project is:
+
+```text
+Qwen/Qwen3-Omni-30B-A3B-Instruct
+```
+
+The model is assumed to be already available on the target server.
+
+By default, the configuration expects the model at:
+
+```text
+models/Qwen3-Omni-30B-A3B-Instruct
+```
+
+The corresponding configuration is:
+
+```yaml
+backbone:
+  model_path: models/Qwen3-Omni-30B-A3B-Instruct
+```
+
+If the model is stored elsewhere on the server, either modify `model_path` in:
+
+```text
+configs/qwen3_omni_local.yaml
+```
+
+or create a symbolic link:
+
+```bash
+mkdir -p models
+
+ln -s /PATH/TO/Qwen3-Omni-30B-A3B-Instruct \
+  models/Qwen3-Omni-30B-A3B-Instruct
+```
+
+Official resources:
+
+- Model card: https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct
+- Official repository: https://github.com/QwenLM/Qwen3-Omni
 
 ### 3.2 BGE-M3
 
-Evidence graph 使用 BGE-M3 计算跨上下文相似度：
+TraitEvidenceGraph uses **BGE-M3** to compute cross-context semantic similarity.
 
-```bash
-huggingface-cli download BAAI/bge-m3 --local-dir models/bge-m3
+The default path is:
+
+```text
+models/bge-m3
 ```
 
+If BGE-M3 is not already available on the server, install the Hugging Face CLI and download it:
 
-## 4. 需要迁移的数据
+```bash
+pip install -U huggingface_hub
 
-四个输入 JSONL 已包含在本目录中，但不包含视频。需要准备以下媒体：
+mkdir -p models
 
-| Dataset | Split | People | Turns / MP4 | 源服务器大小 |
+hf download \
+  BAAI/bge-m3 \
+  --local-dir models/bge-m3
+```
+
+If BGE-M3 already exists elsewhere on the server, either update:
+
+```yaml
+context_similarity:
+  model_path: models/bge-m3
+```
+
+or create a symbolic link.
+
+---
+
+## 4. Dataset Setup
+
+The multimodal data are hosted on Hugging Face:
+
+```text
+lulvhui/TraitEvidenceGraphAgent
+```
+
+The four input JSONL files required for inference are already included in the GitHub repository:
+
+```text
+inputs/IELTS/dev.input.jsonl
+inputs/IELTS/test.input.jsonl
+inputs/RecruitView/dev.input.jsonl
+inputs/RecruitView/test.input.jsonl
+```
+
+The media files need to be downloaded separately.
+
+### 4.1 Download the Media Data
+
+Install the Hugging Face CLI if necessary:
+
+```bash
+pip install -U huggingface_hub
+```
+
+If the dataset repository requires authentication:
+
+```bash
+hf auth login
+```
+
+Download the dataset into the repository's `data/` directory:
+
+```bash
+hf download \
+  lulvhui/TraitEvidenceGraphAgent \
+  --repo-type dataset \
+  --local-dir data
+```
+
+After downloading, the required media paths should follow the structure:
+
+```text
+data/
+├── IELTS/
+│   └── processed/
+│       └── video_turn_clips/
+│           └── ...
+└── RecruitView/
+    └── raw/
+        └── videos/
+            └── ...
+```
+
+The paths must match the `video_path` fields in the corresponding input JSONL files.
+
+For example:
+
+```text
+data/IELTS/processed/video_turn_clips/04/turn_001.mp4
+```
+
+### 4.2 Dataset Statistics
+
+| Dataset | Split | People | Turns / MP4 | Media Size |
 |---|---:|---:|---:|---:|
 | IELTS | dev | 33 | 357 | 6.39 GB |
 | IELTS | test | 33 | 346 | 7.07 GB |
 | RecruitView | dev | 47 | 289 | 2.31 GB |
 | RecruitView | test | 47 | 310 | 2.51 GB |
-| 合计 | | 160 split-person entries | 1302 unique MP4 | 18.28 GB |
+| Total |  | 160 split-person entries | 1302 unique MP4 | 18.28 GB |
 
-准确文件列表：
+The exact media file lists are provided in:
 
 ```text
 manifests/IELTS_dev_media.txt
@@ -84,53 +235,65 @@ manifests/RecruitView_test_media.txt
 manifests/all_dev_test_media.txt
 ```
 
-音频已经包含在 MP4 音轨中，不需要单独下载 WAV。仅下载原始公开数据但不按上述
-相对路径放置是不够的；推理输入会严格检查每个文件。
+Audio is already embedded in the MP4 audio tracks. No separate WAV files are required.
 
+---
 
-```bash
-cd /mnt/sda/lhlu/TraitEvidenceGraphAgent
+## 5. Environment Setup
 
-rsync -av --files-from=deploy/qwen3_omni_30b_a3b_traitgraph/manifests/all_dev_test_media.txt \
-  ./ \
-  USER@NEW_SERVER:/PATH/qwen3_omni_30b_a3b_traitgraph/
-```
-
-这条命令会保留 `data/IELTS/...` 和 `data/RecruitView/...` 的相对目录结构。
-
-
-## 5. 环境安装
-
-建议新建独立环境：
+Create a dedicated Conda environment:
 
 ```bash
 conda create -n qwen3omni_traitgraph python=3.11 -y
 conda activate qwen3omni_traitgraph
-cd /PATH/qwen3_omni_30b_a3b_traitgraph
+
+cd TraitEvidenceGraphAgent
 ```
 
-先根据服务器 CUDA/driver 安装匹配的 PyTorch，再安装其余依赖：
+Install a CUDA-compatible PyTorch build according to the CUDA driver available on the target server.
+
+For example:
 
 ```bash
-# 请从 https://pytorch.org/get-started/locally/ 选择与服务器匹配的命令
 pip install torch torchvision torchaudio
-
-pip install -r requirements.txt
-pip install -U flash-attn --no-build-isolation
 ```
 
-系统还必须安装 FFmpeg，例如：
+Then install the remaining dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install FlashAttention 2:
+
+```bash
+pip install flash-attn --no-build-isolation
+```
+
+FFmpeg is also required:
 
 ```bash
 conda install -c conda-forge ffmpeg -y
 ```
 
-官方推荐 Transformers 5.2.0+；该版本包含
-`Qwen3OmniMoeForConditionalGeneration` 和 `Qwen3OmniMoeProcessor`。
+The project requires:
 
-## 6. GPU 与精度
+```text
+transformers >= 5.2.0, < 6
+```
 
-主配置使用完整 BF16 权重：
+The required Qwen3-Omni classes include:
+
+```text
+Qwen3OmniMoeForConditionalGeneration
+Qwen3OmniMoeProcessor
+```
+
+---
+
+## 6. GPU and Precision Configuration
+
+The default configuration uses full BF16 weights:
 
 ```yaml
 load_in_4bit: false
@@ -139,111 +302,245 @@ device_map: auto
 attn_implementation: flash_attention_2
 ```
 
-建议至少使用 2×80 GB，或具有约 96 GB 以上总显存且单卡分配合理的多 GPU
-服务器。Talker 在加载后关闭，仅生成文本；官方说明关闭 Talker 可节约约 10 GB
-显存。Transformers 上的 MoE 推理仍可能很慢，这是正常现象。
+Full-BF16 inference requires a high-memory multi-GPU environment.
 
-如果机器无法容纳 BF16，可以安装：
+The model uses:
+
+```yaml
+device_map: auto
+```
+
+so model components are automatically distributed across the GPUs visible to the current process.
+
+The Talker component is disabled after loading because the current task only requires text generation.
+
+### Optional NF4 Mode
+
+If the available GPU memory is insufficient for full BF16 inference, install the optional quantization dependencies:
 
 ```bash
 pip install -r requirements-optional-nf4.txt
 ```
 
-然后将 `configs/qwen3_omni_local.yaml` 中 `load_in_4bit` 改为 `true`。
+Then modify:
 
-如果服务器不支持 FlashAttention 2，可以明确把
-`attn_implementation: flash_attention_2` 改为 `sdpa`；这通常更慢且占用更多显存。
+```text
+configs/qwen3_omni_local.yaml
+```
 
-## 7. 运行前检查
+from:
 
-先检查四个 split：
+```yaml
+load_in_4bit: false
+```
+
+to:
+
+```yaml
+load_in_4bit: true
+```
+
+NF4 inference should be treated as a separate quantized configuration rather than the default BF16 experiment.
+
+### FlashAttention Fallback
+
+The default configuration uses:
+
+```yaml
+attn_implementation: flash_attention_2
+```
+
+If FlashAttention 2 is not supported on the target server, change it to:
+
+```yaml
+attn_implementation: sdpa
+```
+
+`sdpa` is generally slower and may require more GPU memory.
+
+---
+
+## 7. Preflight Check
+
+Before starting inference, validate the environment, models, input files, and media paths.
+
+Run:
 
 ```bash
 python scripts/preflight.py --dataset IELTS --split dev
 python scripts/preflight.py --dataset IELTS --split test
+
 python scripts/preflight.py --dataset RecruitView --split dev
 python scripts/preflight.py --dataset RecruitView --split test
 ```
 
-四次都必须返回：
+Each command should return:
 
 ```json
-{"valid": true}
+{
+  "valid": true
+}
 ```
 
-检查内容包括模型类型、BGE-M3、Transformers 版本、CUDA、FlashAttention、
-FFmpeg、JSONL schema 和每个 MP4 是否存在。
+The preflight script checks:
 
-## 8. 正确实验顺序：dev 和 test 都必须推理
+- Qwen3-Omni model directory
+- model type
+- BGE-M3 directory
+- Transformers version
+- CUDA availability
+- available GPU memory
+- FlashAttention installation
+- FFmpeg
+- input JSONL schema
+- dataset identity
+- existence of every referenced MP4 file
 
-实验必须包括两个数据集的验证集和测试集。顺序固定为：
+Do not start the full inference run until the required preflight checks pass.
 
-1. IELTS dev；
-2. RecruitView dev；
-3. 检查 dev 输出并冻结 config；
-4. IELTS test；
-5. RecruitView test。
+---
 
+## 8. Full Evaluation Workflow
 
+For reproducing the complete evaluation, the recommended execution order is:
 
-### 8.1 一条命令依次运行全部四项
+1. IELTS dev
+2. RecruitView dev
+3. verify the dev outputs
+4. IELTS test
+5. RecruitView test
 
-假设使用物理 GPU 0、1、2、3：
+This avoids changing the configuration after inspecting test results.
+
+### 8.1 Run All Four Splits
+
+For example, when using physical GPUs `0,1,2,3`:
 
 ```bash
 export PYTHON_BIN=$(which python)
+
 bash scripts/run_both_datasets.sh 0,1,2,3
 ```
 
-脚本会先完成两个 dev，验证输出完整后才开始两个 test。每个 split 都支持断点续跑。
+The script runs:
 
-### 8.2 分开运行
+```text
+IELTS dev
+    ↓
+RecruitView dev
+    ↓
+IELTS test
+    ↓
+RecruitView test
+```
+
+Each split supports automatic resume after interruption.
+
+### 8.2 Run Individual Splits
+
+IELTS dev:
 
 ```bash
 bash scripts/run_split.sh IELTS dev 0,1,2,3
-bash scripts/run_split.sh RecruitView dev 0,1,2,3
+```
 
-# 确认 dev 后冻结配置，再执行 test：
+RecruitView dev:
+
+```bash
+bash scripts/run_split.sh RecruitView dev 0,1,2,3
+```
+
+IELTS test:
+
+```bash
 bash scripts/run_split.sh IELTS test 0,1,2,3
+```
+
+RecruitView test:
+
+```bash
 bash scripts/run_split.sh RecruitView test 0,1,2,3
 ```
 
-如果服务器 GPU 编号不同，修改最后一个参数即可，例如：
+If different GPU IDs should be used, modify the final argument.
+
+For example:
 
 ```bash
 bash scripts/run_split.sh RecruitView dev 2,3,4,5
 ```
 
-## 9. 输出位置
+The script internally sets:
+
+```bash
+CUDA_VISIBLE_DEVICES=<GPU_IDS>
+```
+
+---
+
+## 9. Output Files
+
+The inference outputs are written to:
+
+```text
+outputs/
+├── IELTS/
+│   └── qwen3_omni_30b_a3b/
+│       └── trait_evidence_graph/
+│           ├── dev/
+│           │   ├── result.json
+│           │   └── debug.json
+│           ├── test/
+│           │   ├── result.json
+│           │   └── debug.json
+│           └── logs/
+│               ├── dev.log
+│               └── test.log
+│
+└── RecruitView/
+    └── qwen3_omni_30b_a3b/
+        └── trait_evidence_graph/
+            ├── dev/
+            │   ├── result.json
+            │   └── debug.json
+            ├── test/
+            │   ├── result.json
+            │   └── debug.json
+            └── logs/
+                ├── dev.log
+                └── test.log
+```
+
+Specifically:
 
 ```text
 outputs/IELTS/qwen3_omni_30b_a3b/trait_evidence_graph/dev/result.json
 outputs/IELTS/qwen3_omni_30b_a3b/trait_evidence_graph/dev/debug.json
+
 outputs/IELTS/qwen3_omni_30b_a3b/trait_evidence_graph/test/result.json
 outputs/IELTS/qwen3_omni_30b_a3b/trait_evidence_graph/test/debug.json
 
 outputs/RecruitView/qwen3_omni_30b_a3b/trait_evidence_graph/dev/result.json
 outputs/RecruitView/qwen3_omni_30b_a3b/trait_evidence_graph/dev/debug.json
+
 outputs/RecruitView/qwen3_omni_30b_a3b/trait_evidence_graph/test/result.json
 outputs/RecruitView/qwen3_omni_30b_a3b/trait_evidence_graph/test/debug.json
 ```
 
-日志位于每个数据集的：
+Each completed split is automatically validated.
 
-```text
-outputs/<DATASET>/qwen3_omni_30b_a3b/trait_evidence_graph/logs/<SPLIT>.log
-```
+The validation checks that:
 
-每个 split 结束后，脚本会确认：
+- input and output subject identities match
+- every subject contains O/C/E/A/N outputs
+- every reasoning field is non-empty
+- both `result.json` and `debug.json` cover the complete split
 
-- 输入与输出 person identity 完全一致；
-- 每人都有 O/C/E/A/N；
-- 所有 reasoning 非空；
-- result 和 debug 都覆盖完整 split。
+---
 
-## 10. 固定的多模态预算
+## 10. Default Multimodal Inference Configuration
 
-为便于与已有 Qwen2.5-Omni-7B 实验比较，本配置固定为：
+The released configuration uses the following fixed multimodal settings:
 
 ```text
 video fps:                 0.5
@@ -255,8 +552,212 @@ generation max tokens:     384
 sampling:                  disabled
 ```
 
+The corresponding settings are defined in:
 
-## 11. 断点恢复
+```text
+configs/qwen3_omni_local.yaml
+```
 
-`run_split.sh` 内部始终传入 `--resume`。中断后执行同一命令即可，它会保留已经同时
-写入 result/debug 的受试者，并从剩余受试者继续。不要手工拼接 JSON 文件。
+Important configuration values include:
+
+```yaml
+audio:
+  sample_rate: 16000
+  max_seconds_per_input: 16.0
+
+video:
+  fps: 0.5
+  min_pixels: 50176
+  max_pixels: 50176
+  total_pixels: 524288
+
+generation:
+  max_new_tokens: 384
+  do_sample: false
+```
+
+For reproducible evaluation, keep these settings unchanged unless intentionally testing a different configuration.
+
+---
+
+## 11. Resume Interrupted Runs
+
+`run_split.sh` always enables:
+
+```text
+--resume
+```
+
+If inference is interrupted, run the same command again.
+
+For example:
+
+```bash
+bash scripts/run_split.sh IELTS test 0,1,2,3
+```
+
+Already completed subjects whose results have been successfully written to both the result and debug outputs will be preserved.
+
+Inference will continue from the remaining subjects.
+
+Do not manually concatenate partial JSON files.
+
+---
+
+## 12. Common Issues
+
+### Model directory not found
+
+If preflight reports:
+
+```text
+Missing Qwen3-Omni model directory
+```
+
+check:
+
+```yaml
+backbone:
+  model_path: ...
+```
+
+in:
+
+```text
+configs/qwen3_omni_local.yaml
+```
+
+and make sure it points to the existing Qwen3-Omni model directory.
+
+---
+
+### BGE-M3 directory not found
+
+Check:
+
+```yaml
+context_similarity:
+  model_path: models/bge-m3
+```
+
+and verify that `config.json` exists inside the BGE-M3 directory.
+
+---
+
+### Missing media files
+
+If preflight reports:
+
+```text
+Missing media files
+```
+
+verify that the Hugging Face dataset has been downloaded under:
+
+```text
+data/
+```
+
+and that paths such as:
+
+```text
+data/IELTS/processed/video_turn_clips/...
+data/RecruitView/raw/videos/...
+```
+
+exist exactly as referenced by the input JSONL files.
+
+---
+
+### CUDA is not available
+
+Check:
+
+```bash
+nvidia-smi
+```
+
+and:
+
+```bash
+python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.device_count())"
+```
+
+---
+
+### FlashAttention is unavailable
+
+Either install:
+
+```bash
+pip install flash-attn --no-build-isolation
+```
+
+or change:
+
+```yaml
+attn_implementation: flash_attention_2
+```
+
+to:
+
+```yaml
+attn_implementation: sdpa
+```
+
+---
+
+### Out of GPU memory
+
+Possible options include:
+
+1. use GPUs with more available memory
+2. expose additional GPUs to the process
+3. ensure no unrelated processes are occupying GPU memory
+4. use the optional NF4 configuration
+
+Check current GPU usage with:
+
+```bash
+nvidia-smi
+```
+
+---
+
+## 13. Quick Start
+
+After the repository, models, dataset, and environment have been prepared:
+
+```bash
+conda activate qwen3omni_traitgraph
+
+cd TraitEvidenceGraphAgent
+```
+
+Check one split first:
+
+```bash
+python scripts/preflight.py \
+  --dataset IELTS \
+  --split dev
+```
+
+If the output contains:
+
+```json
+{
+  "valid": true
+}
+```
+
+run a single dev split:
+
+```bash
+bash scripts/run_split.sh IELTS dev 0,1,2,3
+```
+
+After confirming that the environment and outputs are correct, run the complete evaluation:
+
+```bash
+bash scripts/run_both_datasets.sh 0,1,2,3
+```
