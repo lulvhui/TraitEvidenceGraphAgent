@@ -669,22 +669,6 @@ exist exactly as referenced by the input JSONL files.
 
 ---
 
-### CUDA is not available
-
-Check:
-
-```bash
-nvidia-smi
-```
-
-and:
-
-```bash
-python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.device_count())"
-```
-
----
-
 ### FlashAttention is unavailable
 
 Either install:
