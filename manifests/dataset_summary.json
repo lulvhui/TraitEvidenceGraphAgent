@@ -1,0 +1,40 @@
+{
+  "IELTS": {
+    "dev": {
+      "people": 33,
+      "turns": 357,
+      "unique_media_files": 357,
+      "media_bytes_on_source_server": 6385330902,
+      "missing_on_source_server": 0,
+      "manifest": "manifests/IELTS_dev_media.txt"
+    },
+    "test": {
+      "people": 33,
+      "turns": 346,
+      "unique_media_files": 346,
+      "media_bytes_on_source_server": 7072648013,
+      "missing_on_source_server": 0,
+      "manifest": "manifests/IELTS_test_media.txt"
+    }
+  },
+  "RecruitView": {
+    "dev": {
+      "people": 47,
+      "turns": 289,
+      "unique_media_files": 289,
+      "media_bytes_on_source_server": 2310016070,
+      "missing_on_source_server": 0,
+      "manifest": "manifests/RecruitView_dev_media.txt"
+    },
+    "test": {
+      "people": 47,
+      "turns": 310,
+      "unique_media_files": 310,
+      "media_bytes_on_source_server": 2513361478,
+      "missing_on_source_server": 0,
+      "manifest": "manifests/RecruitView_test_media.txt"
+    }
+  },
+  "combined_unique_media_files": 1302,
+  "note": "Media paths are relative to the portable bundle root."
+}

@@ -1,0 +1,54 @@
+backbone:
+  backbone_id: qwen3_omni_30b_a3b_instruct
+  bridge_path: bridges/qwen3_omni_30b_a3b_local_bridge.py
+  model_path: models/Qwen3-Omni-30B-A3B-Instruct
+  local_files_only: true
+  trust_remote_code: false
+  device_map: auto
+  dtype: bfloat16
+  # Full BF16 is the primary experiment. Enabling NF4 changes the experiment
+  # and should be reported as a quantized variant.
+  load_in_4bit: false
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+  attn_implementation: flash_attention_2
+  require_cuda: true
+  use_audio_in_video: true
+  require_audio_track: true
+  include_modality_notice: true
+  disable_talker: true
+  project_root: ""
+  strict_media_paths: true
+  video_reader: decord
+  fallback_video_reader: decord
+  video_probe_timeout_seconds: 15
+  video_fallback_timeout_seconds: 15
+  image_patch_size: 14
+  audio:
+    sample_rate: 16000
+    max_seconds_per_input: 16.0
+  video:
+    fps: 0.5
+    min_pixels: 50176
+    max_pixels: 50176
+    total_pixels: 524288
+  generation:
+    max_new_tokens: 384
+    do_sample: false
+
+context_similarity:
+  model_path: models/bge-m3
+  local_files_only: true
+  device: cpu
+  batch_size: 64
+  max_length: 64
+
+graph:
+  cross_context_multiplier: 1.25
+  conflict_multiplier: 1.10
+  min_edge_weight: 0.08
+  min_context_distance: 0.20
+
+verification:
+  enabled: true
+  max_revision_rounds: 2

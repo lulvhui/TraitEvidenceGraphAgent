@@ -1,0 +1,2 @@
+# Optional only. The primary experiment uses BF16, not this quantized mode.
+bitsandbytes>=0.45
