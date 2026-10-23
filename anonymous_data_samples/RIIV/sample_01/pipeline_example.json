@@ -1,0 +1,238 @@
+{
+  "sample_id": "RIIV_01",
+  "model": "Qwen2.5-Omni-7B",
+  "source_type": "archived_pipeline_predictions",
+  "graph_content": "original_recorded_nodes_and_edges",
+  "router_predictions": [
+    {
+      "turn_id": "1",
+      "traits": {
+        "O": "no_clear",
+        "C": "no_clear",
+        "E": "no_clear",
+        "A": "no_clear",
+        "N": "no_clear"
+      }
+    },
+    {
+      "turn_id": "2",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "yes",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "3",
+      "traits": {
+        "O": "no",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "4",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "5",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "6",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "7",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    }
+  ],
+  "analyst_predictions": [
+    {
+      "turn_id": "1",
+      "trait": "O",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "1",
+      "trait": "C",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "1",
+      "trait": "E",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "1",
+      "trait": "A",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "1",
+      "trait": "N",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "2",
+      "trait": "O",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "2",
+      "trait": "E",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "4",
+      "trait": "O",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "5",
+      "trait": "O",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "6",
+      "trait": "O",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "7",
+      "trait": "O",
+      "direction": "support_high"
+    }
+  ],
+  "graphs": {
+    "O": {
+      "nodes": [
+        {
+          "turn_id": "2",
+          "direction": "support_high",
+          "dialogue_context": "What did you do at the weekend? | Last Saturday, I went out with some friends for karaoke and we had a really great time, and on Sunday I went to the park for a stroll and took some pictures of plants."
+        },
+        {
+          "turn_id": "4",
+          "direction": "support_high",
+          "dialogue_context": "Do you prefer to eat out or at home? | I like both. I like to eat at a restaurant because it is less work, and I try new dishes like the delicious French onion soup the other day. But, I also like to cook at home because I know the ingredients and it is less expensive."
+        },
+        {
+          "turn_id": "6",
+          "direction": "support_high",
+          "dialogue_context": "If you could open a restaurant what would it be? | That's an interesting question, just give me a moment to think, hmm... I would open a Korean barbecue, not only because this is really tasty, but also because I think it would bring in a high profit."
+        },
+        {
+          "turn_id": "7",
+          "direction": "support_high",
+          "dialogue_context": "Have you ever been to a restaurant in another country? | Yes, I have. I'd been to restaurants in the U.S., France, and Italy; I must say Italian cuisines are truly world-class."
+        }
+      ],
+      "edges": [
+        {
+          "source_turn": "2",
+          "target_turn": "4",
+          "relation": "cross_context_support",
+          "weight": 0.6631004810333252
+        },
+        {
+          "source_turn": "2",
+          "target_turn": "6",
+          "relation": "cross_context_support",
+          "weight": 0.6761516258120537
+        },
+        {
+          "source_turn": "2",
+          "target_turn": "7",
+          "relation": "cross_context_support",
+          "weight": 0.6639980897307396
+        },
+        {
+          "source_turn": "4",
+          "target_turn": "6",
+          "relation": "cross_context_support",
+          "weight": 0.4962673783302307
+        },
+        {
+          "source_turn": "4",
+          "target_turn": "7",
+          "relation": "cross_context_support",
+          "weight": 0.42324602603912354
+        },
+        {
+          "source_turn": "6",
+          "target_turn": "7",
+          "relation": "cross_context_support",
+          "weight": 0.5605769157409668
+        }
+      ]
+    },
+    "C": {
+      "nodes": [],
+      "edges": []
+    },
+    "E": {
+      "nodes": [
+        {
+          "turn_id": "2",
+          "direction": "support_high",
+          "dialogue_context": "What did you do at the weekend? | Last Saturday, I went out with some friends for karaoke and we had a really great time, and on Sunday I went to the park for a stroll and took some pictures of plants."
+        }
+      ],
+      "edges": []
+    },
+    "A": {
+      "nodes": [],
+      "edges": []
+    },
+    "N": {
+      "nodes": [],
+      "edges": []
+    }
+  },
+  "traits": {
+    "O": {
+      "reasoning": "In Turn 6, the speaker expresses interest in opening a Korean barbecue restaurant, citing both the taste and potential profitability. This indicates a willingness to explore new ventures and consider different cuisines, aligning with the theme of openness. The cross-context support between turns suggests a consistent pattern of openness to new experiences and interests. The lack of conflict and high stability in the graph further support the conclusion that the speaker exhibits openness in this interaction."
+    },
+    "C": {
+      "reasoning": "The provided graph diagnostics indicate that there is no clear direction, stability, or cross-context support for the trait 'C' (Conscientiousness). The graph also shows no conflict, and the context diversity is not specified. Given the lack of evidence for any direction or support, it is not possible to infer Conscientiousness from the provided data. The absence of evidence does not allow for the assignment of a score or label for Conscientiousness."
+    },
+    "E": {
+      "reasoning": "The selected raw turn provides evidence of the person's weekend activities, which include going out with friends for karaoke and taking pictures of plants in the park. These activities are typically associated with social engagement and outdoor exploration, which are behaviors consistent with high extraversion. The person's description of the activities as 'really great' suggests a positive and enthusiastic attitude, further supporting the inference of extraversion. The lack of any contradictory or negative statements about these activities also aligns with the observed pattern of extraversion. The context is a casual conversation, which is appropriate for discussing such activities, and there is no evidence of conflict or cross-context support that would contradict this inference. Overall, the evidence from this turn supports the observation of extraversion in the person."
+    },
+    "A": {
+      "reasoning": "The provided graph diagnostics indicate that there is no clear dominant direction for Agreeableness, with metrics such as stability, conflict, and cross-context support all being 0.0. The selected raw Turn IDs are empty, meaning there is no textual evidence to reinspect. Given the lack of evidence for any direction or corroboration, and the absence of conflict or context diversity, it is not possible to infer Agreeableness from the provided data. The graph suggests a neutral stance on Agreeableness, with no strong evidence supporting either high or low levels of Agreeableness in the observed interaction."
+    },
+    "N": {
+      "reasoning": "The provided graph diagnostics indicate that there is no clear direction for the trait 'N' (Neuroticism), with a stability of 0.0, a conflict of 0.0, and no cross-context support. The selected raw Turn IDs are empty, meaning there is no textual evidence available for reinspection. Given the lack of evidence, it is not possible to infer any pattern or direction for Neuroticism based on the provided data. The absence of evidence does not allow for the assignment of a neuroticism level, and the graph diagnostics suggest that the trait is not present in the dataset or interaction."
+    }
+  }
+}

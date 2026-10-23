@@ -1,0 +1,265 @@
+{
+  "format_version": 1,
+  "description": "Two participant examples per dataset with face-masked source videos and unchanged original audio",
+  "datasets": {
+    "RIIV": {
+      "project_alias": "IELTS",
+      "samples": 2
+    },
+    "RecruitView": {
+      "samples": 2
+    }
+  },
+  "traits": {
+    "O": "Openness",
+    "C": "Conscientiousness",
+    "E": "Extraversion",
+    "A": "Agreeableness",
+    "N": "Neuroticism"
+  },
+  "samples": [
+    {
+      "sample_id": "RIIV_01",
+      "dataset": "RIIV",
+      "directory": "RIIV/sample_01",
+      "turns": 7,
+      "turn_trait_pairs": 35,
+      "annotation_direction_counts": {
+        "no_clear": 25,
+        "support_high": 9,
+        "support_low": 1
+      },
+      "media_bytes": 14538585,
+      "video_files": 1
+    },
+    {
+      "sample_id": "RIIV_02",
+      "dataset": "RIIV",
+      "directory": "RIIV/sample_02",
+      "turns": 12,
+      "turn_trait_pairs": 60,
+      "annotation_direction_counts": {
+        "support_high": 19,
+        "no_clear": 36,
+        "support_low": 5
+      },
+      "media_bytes": 30312926,
+      "video_files": 1
+    },
+    {
+      "sample_id": "RecruitView_01",
+      "dataset": "RecruitView",
+      "directory": "RecruitView/sample_01",
+      "turns": 6,
+      "turn_trait_pairs": 30,
+      "annotation_direction_counts": {
+        "support_high": 8,
+        "no_clear": 18,
+        "support_low": 4
+      },
+      "media_bytes": 12199319,
+      "video_files": 6
+    },
+    {
+      "sample_id": "RecruitView_02",
+      "dataset": "RecruitView",
+      "directory": "RecruitView/sample_02",
+      "turns": 6,
+      "turn_trait_pairs": 30,
+      "annotation_direction_counts": {
+        "support_low": 2,
+        "support_high": 11,
+        "no_clear": 17
+      },
+      "media_bytes": 6524216,
+      "video_files": 6
+    }
+  ],
+  "media_files": 14,
+  "media_bytes": 63575046,
+  "selection": "Illustrative examples selected for complete records and observable support/conflict structures; not selected using Judge agreement or performance scores",
+  "text_processing": "Directly stated participant names replaced by [NAME]; original videos are unchanged",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 42,
+      "sha256": "bfe2e7093f352205764534b2fc590dd92addf7e46dc6e29e66e6701706a9e581"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 29,
+      "sha256": "60c9bdd905fcf45ac485c680d32e9773962cf061b6f041dcddd033911558a672"
+    },
+    {
+      "path": "DATA_FORMAT.md",
+      "bytes": 2091,
+      "sha256": "ad1702f82b81d3d2f6813238e9300e91d9c2ac71fea79f1f9edbf439c5f07c01"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5371,
+      "sha256": "75c82d11aee217649197055b864626e7a56e4891fd27cbff6b2f10a03304bbe5"
+    },
+    {
+      "path": "RIIV/sample_01/evidence_annotations.jsonl",
+      "bytes": 2290,
+      "sha256": "1f1a2f4037ca10fc2fa7b6a83e94700d11583decebc7838af49c112d8674630b"
+    },
+    {
+      "path": "RIIV/sample_01/interview.json",
+      "bytes": 3965,
+      "sha256": "a9708f97b6c38790f02d166711889f08ae1da4e6597a038c30903550b937fac5"
+    },
+    {
+      "path": "RIIV/sample_01/media/interview.mp4",
+      "bytes": 14538585,
+      "sha256": "f19ff14db466af1bdbcf3fd454fa2bc8374ee8e6b1e5b6c5b773d5abc2dd6f67"
+    },
+    {
+      "path": "RIIV/sample_01/pipeline_example.json",
+      "bytes": 8571,
+      "sha256": "51c02f9b7de58429a1d459342363db5ae1257c42f2ae3e3ae8377a6bd5dfad3f"
+    },
+    {
+      "path": "RIIV/sample_01/reference_reasoning.json",
+      "bytes": 5575,
+      "sha256": "e2541174fcb29692a06bdabbbc35a27273cc671a93563279a17592c30488626e"
+    },
+    {
+      "path": "RIIV/sample_02/evidence_annotations.jsonl",
+      "bytes": 3946,
+      "sha256": "42739315ec70f3c156cb7c6bc300a3beaa1fbbef64d966bfb0880d910ecfa5bb"
+    },
+    {
+      "path": "RIIV/sample_02/interview.json",
+      "bytes": 7190,
+      "sha256": "63316b647bbab4d6f55263bcc9850928a667151eec346c05b2e74be5fe630e50"
+    },
+    {
+      "path": "RIIV/sample_02/media/interview.mp4",
+      "bytes": 30312926,
+      "sha256": "0ed1d7fa4fe40b735bc5034ed9b9ab0300360ee404fac51a8c8f97e4464fa730"
+    },
+    {
+      "path": "RIIV/sample_02/pipeline_example.json",
+      "bytes": 12722,
+      "sha256": "5056dd024667ae4407aae3dd6c2546ec95bdcb881d4b3fa8d882d70051fdcba1"
+    },
+    {
+      "path": "RIIV/sample_02/reference_reasoning.json",
+      "bytes": 10072,
+      "sha256": "eb88a51af0a80d6a981ed434104aded810334a5610cc5c61421b21bf0b274294"
+    },
+    {
+      "path": "RecruitView/sample_01/evidence_annotations.jsonl",
+      "bytes": 2012,
+      "sha256": "c77de9b8ac069b895dafa3bfeaf56bb3d3969708ab5445472d91022090de1a23"
+    },
+    {
+      "path": "RecruitView/sample_01/interview.json",
+      "bytes": 7552,
+      "sha256": "279e9b311249c57b181163025120aabefddbf163265606e278d1146cd94e2b2e"
+    },
+    {
+      "path": "RecruitView/sample_01/media/turn_001.mp4",
+      "bytes": 1433810,
+      "sha256": "f98056bd6f7881e095ce462efbab16efe03a11b5ea2da4a474a22130e8b97a25"
+    },
+    {
+      "path": "RecruitView/sample_01/media/turn_002.mp4",
+      "bytes": 2630912,
+      "sha256": "897b62811c2a1c620eebcce09d09993ab96962470fc837542df2873be87209fc"
+    },
+    {
+      "path": "RecruitView/sample_01/media/turn_003.mp4",
+      "bytes": 2169840,
+      "sha256": "1cc6b6ac9b6cb6ad92e5eb12d99ad41e9196e282a0d0e23c0a8ab81fe35610ec"
+    },
+    {
+      "path": "RecruitView/sample_01/media/turn_004.mp4",
+      "bytes": 2223454,
+      "sha256": "2d0c44b7f5b654965878cff0bc80d6e221c26b74491dde1ab5c0bd8f01776bb1"
+    },
+    {
+      "path": "RecruitView/sample_01/media/turn_005.mp4",
+      "bytes": 2078131,
+      "sha256": "ddd1279f2ee66a4ed075f13a884b08567abda5645c0c59e875ae6aed73ee1bb7"
+    },
+    {
+      "path": "RecruitView/sample_01/media/turn_006.mp4",
+      "bytes": 1663172,
+      "sha256": "69f4a433bb2a49ba62d8f2f8e1018fc86d8032010950ffcd4aabacd5dccd458a"
+    },
+    {
+      "path": "RecruitView/sample_01/pipeline_example.json",
+      "bytes": 10518,
+      "sha256": "c41ad93e5eb5a847957af5619c4ee54d351803c34b9377d63c22fdd3952c4bd6"
+    },
+    {
+      "path": "RecruitView/sample_01/reference_reasoning.json",
+      "bytes": 2069,
+      "sha256": "8746a8a97697f5d3a75043975cd0fe65c56a1b109254578adcd7e17ebaf49c62"
+    },
+    {
+      "path": "RecruitView/sample_02/evidence_annotations.jsonl",
+      "bytes": 2017,
+      "sha256": "744d0311d6adeed48ad9f7e8153568120e28f4cea464e4856fbe4110b852e423"
+    },
+    {
+      "path": "RecruitView/sample_02/interview.json",
+      "bytes": 7049,
+      "sha256": "7134da487a638c41075b5d786adb66e49d20c2a46364a36d043357775d1b978d"
+    },
+    {
+      "path": "RecruitView/sample_02/media/turn_001.mp4",
+      "bytes": 773440,
+      "sha256": "693047e5d5b686081698f4d7c5171478cd02e80adcbc6e0af61b393a4e01196d"
+    },
+    {
+      "path": "RecruitView/sample_02/media/turn_002.mp4",
+      "bytes": 744173,
+      "sha256": "6292d78755ad28be01bef3c2c12226048d91ba2303b2e38034036f664bd36026"
+    },
+    {
+      "path": "RecruitView/sample_02/media/turn_003.mp4",
+      "bytes": 1740303,
+      "sha256": "b1e5efe063345a86013a61110db8ae739f1c68d3b046795b9c82b33d72375d6e"
+    },
+    {
+      "path": "RecruitView/sample_02/media/turn_004.mp4",
+      "bytes": 1104753,
+      "sha256": "0e827e9baee0212294459479f6e12e1c0bd1a93a1336a4689f658170486a03ac"
+    },
+    {
+      "path": "RecruitView/sample_02/media/turn_005.mp4",
+      "bytes": 1145654,
+      "sha256": "6d888639fc93875b39fc66afd067dc2566c775786ed2bd3b2454a052527c7601"
+    },
+    {
+      "path": "RecruitView/sample_02/media/turn_006.mp4",
+      "bytes": 1015893,
+      "sha256": "fd454aea2d507f0f0fa96b811f1cc7408ffe115b8232ef993bc582ad460e0879"
+    },
+    {
+      "path": "RecruitView/sample_02/pipeline_example.json",
+      "bytes": 11470,
+      "sha256": "9f96fb97597886a2790d1c86ff666ba6f0c97a475b395e25973b08317ff58b9d"
+    },
+    {
+      "path": "RecruitView/sample_02/reference_reasoning.json",
+      "bytes": 2601,
+      "sha256": "1d1ef519fcf036a9e1189589468908423702d85158c92bb06902d22bc15838ca"
+    },
+    {
+      "path": "face_redaction_summary.json",
+      "bytes": 7259,
+      "sha256": "efed3e12ade83ce1d2822f322984eccb7049f2dcdb87c6af748536dcaa267120"
+    },
+    {
+      "path": "verify_samples.py",
+      "bytes": 5210,
+      "sha256": "bf8c77e72d1868eb597336e8046c2b4e52f30ba3fdad5ef609c265037dc9437b"
+    }
+  ],
+  "media_policy": "Opaque head masks applied to all speakers; audio payloads and presentation times preserved"
+}

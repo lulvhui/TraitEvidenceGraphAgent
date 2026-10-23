@@ -1,0 +1,127 @@
+{
+  "sample_id": "RIIV_01",
+  "dataset": "RIIV",
+  "timestamps_relative_to": "the video_path of each turn",
+  "turns": [
+    {
+      "turn_id": "1",
+      "question": "What do you like to do after work or school?",
+      "answer_text": "When I'm finished at the office, I like to go home and prepare a meal, like yesterday, I made a really delicious soondubu-jjigae, a soft tofu stew.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        49.5,
+        52.8
+      ],
+      "answer_interval_seconds": [
+        54.0,
+        64.2
+      ]
+    },
+    {
+      "turn_id": "2",
+      "question": "What did you do at the weekend?",
+      "answer_text": "Last Saturday, I went out with some friends for karaoke and we had a really great time, and on Sunday I went to the park for a stroll and took some pictures of plants.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        65.5,
+        68.8
+      ],
+      "answer_interval_seconds": [
+        69.0,
+        82.5
+      ]
+    },
+    {
+      "turn_id": "3",
+      "question": "How often do you eat at a restaurant?",
+      "answer_text": "I frequently eat out about three to four times a week.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        87.0,
+        89.5
+      ],
+      "answer_interval_seconds": [
+        90.0,
+        94.8
+      ]
+    },
+    {
+      "turn_id": "4",
+      "question": "Do you prefer to eat out or at home?",
+      "answer_text": "I like both. I like to eat at a restaurant because it is less work, and I try new dishes like the delicious French onion soup the other day. But, I also like to cook at home because I know the ingredients and it is less expensive.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        95.5,
+        98.8
+      ],
+      "answer_interval_seconds": [
+        99.5,
+        118.8
+      ]
+    },
+    {
+      "turn_id": "5",
+      "question": "Which is your favorite restaurant?",
+      "answer_text": "My go-to restaurant is Mugyodong Bugeokukjib. They have the most delicious soup in all of Seoul and the price is great.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        120.0,
+        122.4
+      ],
+      "answer_interval_seconds": [
+        122.8,
+        132.8
+      ]
+    },
+    {
+      "turn_id": "6",
+      "question": "If you could open a restaurant what would it be?",
+      "answer_text": "That's an interesting question, just give me a moment to think, hmm... I would open a Korean barbecue, not only because this is really tasty, but also because I think it would bring in a high profit.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        134.0,
+        137.2
+      ],
+      "answer_interval_seconds": [
+        137.8,
+        154.2
+      ]
+    },
+    {
+      "turn_id": "7",
+      "question": "Have you ever been to a restaurant in another country?",
+      "answer_text": "Yes, I have. I'd been to restaurants in the U.S., France, and Italy; I must say Italian cuisines are truly world-class.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        155.5,
+        159.0
+      ],
+      "answer_interval_seconds": [
+        159.5,
+        169.2
+      ]
+    }
+  ],
+  "media": [
+    {
+      "path": "media/interview.mp4",
+      "bytes": 14538585,
+      "sha256": "f19ff14db466af1bdbcf3fd454fa2bc8374ee8e6b1e5b6c5b773d5abc2dd6f67",
+      "duration_seconds": 171.943991,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 5158,
+      "frame_rate": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    }
+  ]
+}

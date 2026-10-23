@@ -1,0 +1,21 @@
+{
+  "sample_id": "RecruitView_01",
+  "source_type": "provided_person_trait_reference_reasoning",
+  "traits": {
+    "O": {
+      "reasoning": "Two weak evidence items align on pragmatic openness: the candidate endorses a growth mindset with no limits on learning (qa_id 1), and considers varied career paths including entrepreneurship and international work (qa_id 5). Both items note the phrasing is conventional and lacks imaginative or abstract content, so the inference is limited to openness to concrete, goal-relevant new experiences rather than broader intellectual or aesthetic openness. Evidence is restricted to interview self-report related to learning and career planning."
+    },
+    "C": {
+      "reasoning": "Multiple weak evidence items show a pattern of intentional planning: scheduling multiple responsibilities (qa_id 4), setting structured career and skill development timelines (qa_id 5, 6), and using intentional stress coping strategies (qa_id 2), alongside a stated value for continuous improvement (qa_id 1). A single conflicting item notes abandoning a study routine during COVID due to distraction (qa_id 3), which represents a context-specific lapse rather than a general pattern. All evidence is self-reported interview content, so inferences are limited to stated tendencies rather than confirmed habitual behavior across unreported contexts."
+    },
+    "E": {
+      "reasoning": "No evidence available for this trait."
+    },
+    "A": {
+      "reasoning": "No evidence available for this trait."
+    },
+    "N": {
+      "reasoning": "Three evidence items support low negative affect in structured contexts: calm, confident delivery during self-rating and career plan discussions (qa_id 1, 5), and proactive stress coping strategies to avoid overthinking (qa_id 2). A single conflicting item notes mild regret and self-blame about past underperformance, with no overt distress (qa_id 3). All evidence is from a low-stakes interview setting, so inferences do not extend to high-conflict or high-pressure unstructured contexts."
+    }
+  }
+}

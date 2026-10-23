@@ -1,0 +1,258 @@
+{
+  "sample_id": "RecruitView_01",
+  "model": "Qwen2.5-Omni-7B",
+  "source_type": "archived_pipeline_predictions",
+  "graph_content": "original_recorded_nodes_and_edges",
+  "router_predictions": [
+    {
+      "turn_id": "1",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "2",
+      "traits": {
+        "O": "no_clear",
+        "C": "no_clear",
+        "E": "no_clear",
+        "A": "no_clear",
+        "N": "yes"
+      }
+    },
+    {
+      "turn_id": "3",
+      "traits": {
+        "O": "no_clear",
+        "C": "no_clear",
+        "E": "no_clear",
+        "A": "no_clear",
+        "N": "no_clear"
+      }
+    },
+    {
+      "turn_id": "4",
+      "traits": {
+        "O": "no",
+        "C": "yes",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    },
+    {
+      "turn_id": "5",
+      "traits": {
+        "O": "no_clear",
+        "C": "no_clear",
+        "E": "no_clear",
+        "A": "no_clear",
+        "N": "no_clear"
+      }
+    },
+    {
+      "turn_id": "6",
+      "traits": {
+        "O": "yes",
+        "C": "no",
+        "E": "no",
+        "A": "no",
+        "N": "no"
+      }
+    }
+  ],
+  "analyst_predictions": [
+    {
+      "turn_id": "1",
+      "trait": "O",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "2",
+      "trait": "O",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "2",
+      "trait": "C",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "2",
+      "trait": "E",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "2",
+      "trait": "A",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "2",
+      "trait": "N",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "3",
+      "trait": "O",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "3",
+      "trait": "C",
+      "direction": "support_low"
+    },
+    {
+      "turn_id": "3",
+      "trait": "E",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "3",
+      "trait": "A",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "3",
+      "trait": "N",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "4",
+      "trait": "C",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "5",
+      "trait": "O",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "5",
+      "trait": "C",
+      "direction": "support_high"
+    },
+    {
+      "turn_id": "5",
+      "trait": "E",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "5",
+      "trait": "A",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "5",
+      "trait": "N",
+      "direction": "no_clear"
+    },
+    {
+      "turn_id": "6",
+      "trait": "O",
+      "direction": "no_clear"
+    }
+  ],
+  "graphs": {
+    "O": {
+      "nodes": [
+        {
+          "turn_id": "1",
+          "direction": "support_high",
+          "dialogue_context": "How would you rate yourself on a scale of 1 to 10? | I would rate myself 10 out of 10 because I believe there is always a room to improve but I always look forward to it and there is no limitations to what you can achieve and there is no age to learn but you should always believe that you are always the best."
+        }
+      ],
+      "edges": []
+    },
+    "C": {
+      "nodes": [
+        {
+          "turn_id": "3",
+          "direction": "support_low",
+          "dialogue_context": "Tell me about a time when you were not satisfied with your performance? | So a time where I was not satisfied with myself was my JEE performance. In 11th and 12th, I specially opted for an open school where I planned about like I would study a lot to save myself some hours. But as soon as COVID came, it all went wrong and it just flipped totally. I just didn't study and I was always busy with my smartphones and I still regret that decision."
+        },
+        {
+          "turn_id": "4",
+          "direction": "support_high",
+          "dialogue_context": "Can you give an example of a time when you successfully managed multiple competing priorities? | So I value time and I look forward to work with it. I don't like being late, be it my class, gym, whatever. So I manage my time accordingly. I go to the gym, go to the classes, do my extracurriculars in my club activities and coding part of the day. So I manage it up together and obviously I also have fun around with friends and hang out with them."
+        },
+        {
+          "turn_id": "5",
+          "direction": "support_high",
+          "dialogue_context": "Where do you see yourself in the next 5 years? | Five years is a lot of time and right now I think by that time I would have an MBA degree and have two three years of job experience and will look forward to you know find a good job or start startup something of my own probably abroad and if not abroad then in India. Thank you."
+        }
+      ],
+      "edges": [
+        {
+          "source_turn": "3",
+          "target_turn": "4",
+          "relation": "conflict",
+          "weight": 1.0
+        },
+        {
+          "source_turn": "3",
+          "target_turn": "5",
+          "relation": "conflict",
+          "weight": 1.0
+        },
+        {
+          "source_turn": "4",
+          "target_turn": "5",
+          "relation": "cross_context_support",
+          "weight": 0.5985897034406662
+        }
+      ]
+    },
+    "E": {
+      "nodes": [
+        {
+          "turn_id": "2",
+          "direction": "support_high",
+          "dialogue_context": "How do you handle stress and anxiety? | So to handle stress and anxiety I generally find a way to you know not think about it like rather than overthinking about it, it just gets worse. So I like sometimes I go to the gym or I stay outdoors mostly where I feel I am the best version of myself and I can even have my best food which makes me feel way better or I might just sleep it when I wake up I just reset. So there are a lot of ways to you know find solutions to what problems you have always."
+        }
+      ],
+      "edges": []
+    },
+    "A": {
+      "nodes": [
+        {
+          "turn_id": "2",
+          "direction": "support_high",
+          "dialogue_context": "How do you handle stress and anxiety? | So to handle stress and anxiety I generally find a way to you know not think about it like rather than overthinking about it, it just gets worse. So I like sometimes I go to the gym or I stay outdoors mostly where I feel I am the best version of myself and I can even have my best food which makes me feel way better or I might just sleep it when I wake up I just reset. So there are a lot of ways to you know find solutions to what problems you have always."
+        }
+      ],
+      "edges": []
+    },
+    "N": {
+      "nodes": [
+        {
+          "turn_id": "3",
+          "direction": "support_high",
+          "dialogue_context": "Tell me about a time when you were not satisfied with your performance? | So a time where I was not satisfied with myself was my JEE performance. In 11th and 12th, I specially opted for an open school where I planned about like I would study a lot to save myself some hours. But as soon as COVID came, it all went wrong and it just flipped totally. I just didn't study and I was always busy with my smartphones and I still regret that decision."
+        }
+      ],
+      "edges": []
+    }
+  },
+  "traits": {
+    "O": {
+      "reasoning": "Turn 1 is a direct self-assessment where the speaker rates themselves at 10 out of 10. The speaker expresses a belief in continuous improvement, no limitations to achievement, and an ageless learning potential. This self-assessment is positive and self-enhancing, indicating a high level of openness to growth and learning. There is no conflicting evidence, and the context is a personal reflection, which supports the openness trait."
+    },
+    "C": {
+      "reasoning": "In Turn 3, the person reflects on a past decision regarding their JEE performance, acknowledging regret for not studying and being distracted by smartphones. This suggests a lack of conscientiousness in managing time and priorities. In Turn 4, the person describes managing multiple priorities effectively, such as attending gym, classes, and extracurricular activities, indicating a high level of conscientiousness. In Turn 5, the person plans for the future, showing a goal-oriented and organized approach. The mixed direction in the graph (support_high, support_low, conflict) indicates a complex pattern of conscientiousness, with both positive and negative traits being displayed. The cross-context support between Turns 4 and 5 further supports the idea of a conscientious approach to managing time and future planning."
+    },
+    "E": {
+      "reasoning": "In Turn 2, the person describes various strategies to handle stress and anxiety, such as going to the gym, staying outdoors, or sleeping. These actions suggest a proactive approach to managing stress, which aligns with extraversion traits. The person's willingness to engage in activities that promote well-being and self-improvement indicates a preference for social and active environments, supporting the extraversion trait."
+    },
+    "A": {
+      "reasoning": "In Turn 2, the person describes various strategies to handle stress and anxiety, such as going to the gym, staying outdoors, or sleeping. The tone is reflective and solution-oriented, suggesting a proactive approach to managing stress. The person also mentions feeling better when engaging in these activities, indicating a positive emotional response. There is no direct evidence of conflict or negative emotions, and the context is focused on personal well-being. Overall, the evidence suggests a generally agreeable and proactive personality."
+    },
+    "N": {
+      "reasoning": "Turn 3 shows the person reflecting on a past experience where they were not satisfied with their performance, specifically their JEE performance. The person describes their initial plan to study a lot to save time, but due to the impact of COVID, they did not follow through and regret their decision. This reflects a pattern of self-reflection and regret, which can be associated with high Neuroticism. The person's expression and tone suggest a sense of disappointment and regret, indicating emotional instability and vulnerability, which are traits often linked to high Neuroticism. The context of the regret and the regret itself are the main sources of evidence for this inference."
+    }
+  }
+}

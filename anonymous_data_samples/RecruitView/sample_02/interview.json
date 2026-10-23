@@ -1,0 +1,195 @@
+{
+  "sample_id": "RecruitView_02",
+  "dataset": "RecruitView",
+  "timestamps_relative_to": "the video_path of each turn",
+  "turns": [
+    {
+      "turn_id": "1",
+      "question": "Are you open to take risks? or Do you like experimenting?",
+      "answer_text": "Are you open to take risks or do you like experimenting? I think it depends on the reward that we might get at the end of the risk. If it's not worth it, I might not take the risk. I generally don't like experimenting.",
+      "video_path": "media/turn_001.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        13.0
+      ]
+    },
+    {
+      "turn_id": "2",
+      "question": "How did you handle disagreements?",
+      "answer_text": "I think the best way to handle disagreements or the way I do it is sitting down in a calm manner and talking it out and hearing the other side of the story. I think it helps to get a better perspective and settle disagreements peacefully.",
+      "video_path": "media/turn_002.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        14.0
+      ]
+    },
+    {
+      "turn_id": "3",
+      "question": "Tell me about a time where you experienced difficulty while working on a project, how did you handle it?",
+      "answer_text": "So I was working on an ideathon this semester and while working on the idea I had a few disagreements with my team members. But I think the best way to handle it and the way we handled it was that we all sat down and calmly talked about the problem and addressed issues and how we could get closer to solving the problem. And I think that really helped.",
+      "video_path": "media/turn_003.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        27.0
+      ]
+    },
+    {
+      "turn_id": "4",
+      "question": "What makes you happy?",
+      "answer_text": "I think getting a step closer to achieving my goals or actually achieving a goal is what makes me happy. Apart from this, doing hobbies like reading or playing guitar, I think that also makes me very happy.",
+      "video_path": "media/turn_004.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        16.0
+      ]
+    },
+    {
+      "turn_id": "5",
+      "question": "Can you give an example of a situation where you mentored a junior colleague, helping them grow professionally and personally?",
+      "answer_text": "So during exams, exams are a very stressful time for everyone and a junior of mine got very sick and couldn't give the exam. So I helped him with the recessions by you know giving him my notes and helping him out on topics that he didn't really know or didn't really understand.",
+      "video_path": "media/turn_005.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        1.0,
+        19.0
+      ]
+    },
+    {
+      "turn_id": "6",
+      "question": "Tell me about yourself",
+      "answer_text": "Hello, my name is [NAME]. I'm a third year computer science student at Manipal Jaipur. Some of my hobbies are listening to music and playing guitar. I compose my own songs with my band. That's it.",
+      "video_path": "media/turn_006.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        15.0
+      ]
+    }
+  ],
+  "media": [
+    {
+      "path": "media/turn_001.mp4",
+      "bytes": 773440,
+      "sha256": "693047e5d5b686081698f4d7c5171478cd02e80adcbc6e0af61b393a4e01196d",
+      "duration_seconds": 14.316009,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 429,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_002.mp4",
+      "bytes": 744173,
+      "sha256": "6292d78755ad28be01bef3c2c12226048d91ba2303b2e38034036f664bd36026",
+      "duration_seconds": 16.1,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 483,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_003.mp4",
+      "bytes": 1740303,
+      "sha256": "b1e5efe063345a86013a61110db8ae739f1c68d3b046795b9c82b33d72375d6e",
+      "duration_seconds": 28.466667,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 854,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_004.mp4",
+      "bytes": 1104753,
+      "sha256": "0e827e9baee0212294459479f6e12e1c0bd1a93a1336a4689f658170486a03ac",
+      "duration_seconds": 17.666667,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 530,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_005.mp4",
+      "bytes": 1145654,
+      "sha256": "6d888639fc93875b39fc66afd067dc2566c775786ed2bd3b2454a052527c7601",
+      "duration_seconds": 20.716009,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 621,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_006.mp4",
+      "bytes": 1015893,
+      "sha256": "fd454aea2d507f0f0fa96b811f1cc7408ffe115b8232ef993bc582ad460e0879",
+      "duration_seconds": 16.3,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 489,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    }
+  ]
+}

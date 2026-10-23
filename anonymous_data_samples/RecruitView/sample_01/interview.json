@@ -1,0 +1,195 @@
+{
+  "sample_id": "RecruitView_01",
+  "dataset": "RecruitView",
+  "timestamps_relative_to": "the video_path of each turn",
+  "turns": [
+    {
+      "turn_id": "1",
+      "question": "How would you rate yourself on a scale of 1 to 10?",
+      "answer_text": "I would rate myself 10 out of 10 because I believe there is always a room to improve but I always look forward to it and there is no limitations to what you can achieve and there is no age to learn but you should always believe that you are always the best.",
+      "video_path": "media/turn_001.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        20.0
+      ]
+    },
+    {
+      "turn_id": "2",
+      "question": "How do you handle stress and anxiety?",
+      "answer_text": "So to handle stress and anxiety I generally find a way to you know not think about it like rather than overthinking about it, it just gets worse. So I like sometimes I go to the gym or I stay outdoors mostly where I feel I am the best version of myself and I can even have my best food which makes me feel way better or I might just sleep it when I wake up I just reset. So there are a lot of ways to you know find solutions to what problems you have always.",
+      "video_path": "media/turn_002.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        1.0,
+        37.0
+      ]
+    },
+    {
+      "turn_id": "3",
+      "question": "Tell me about a time when you were not satisfied with your performance?",
+      "answer_text": "So a time where I was not satisfied with myself was my JEE performance. In 11th and 12th, I specially opted for an open school where I planned about like I would study a lot to save myself some hours. But as soon as COVID came, it all went wrong and it just flipped totally. I just didn't study and I was always busy with my smartphones and I still regret that decision.",
+      "video_path": "media/turn_003.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        30.0
+      ]
+    },
+    {
+      "turn_id": "4",
+      "question": "Can you give an example of a time when you successfully managed multiple competing priorities?",
+      "answer_text": "So I value time and I look forward to work with it. I don't like being late, be it my class, gym, whatever. So I manage my time accordingly. I go to the gym, go to the classes, do my extracurriculars in my club activities and coding part of the day. So I manage it up together and obviously I also have fun around with friends and hang out with them.",
+      "video_path": "media/turn_004.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        32.0
+      ]
+    },
+    {
+      "turn_id": "5",
+      "question": "Where do you see yourself in the next 5 years?",
+      "answer_text": "Five years is a lot of time and right now I think by that time I would have an MBA degree and have two three years of job experience and will look forward to you know find a good job or start startup something of my own probably abroad and if not abroad then in India. Thank you.",
+      "video_path": "media/turn_005.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        30.0
+      ]
+    },
+    {
+      "turn_id": "6",
+      "question": "Tell me about yourself",
+      "answer_text": "Hi everyone, I am [NAME]. I am pursuing BTech from Manipal University Jaipur in Computer Science and Engineering. So I want to pursue my career as a software developer in full stack development and I have almost completed the front end and I am looking to complete the back end by the end of the year. Thank you.",
+      "video_path": "media/turn_006.mp4",
+      "question_interval_seconds": null,
+      "answer_interval_seconds": [
+        0.0,
+        24.0
+      ]
+    }
+  ],
+  "media": [
+    {
+      "path": "media/turn_001.mp4",
+      "bytes": 1433810,
+      "sha256": "f98056bd6f7881e095ce462efbab16efe03a11b5ea2da4a474a22130e8b97a25",
+      "duration_seconds": 22.133333,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 664,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_002.mp4",
+      "bytes": 2630912,
+      "sha256": "897b62811c2a1c620eebcce09d09993ab96962470fc837542df2873be87209fc",
+      "duration_seconds": 39.133333,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 1174,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_003.mp4",
+      "bytes": 2169840,
+      "sha256": "1cc6b6ac9b6cb6ad92e5eb12d99ad41e9196e282a0d0e23c0a8ab81fe35610ec",
+      "duration_seconds": 32.105011,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 963,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_004.mp4",
+      "bytes": 2223454,
+      "sha256": "2d0c44b7f5b654965878cff0bc80d6e221c26b74491dde1ab5c0bd8f01776bb1",
+      "duration_seconds": 34.011995,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 1020,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_005.mp4",
+      "bytes": 2078131,
+      "sha256": "ddd1279f2ee66a4ed075f13a884b08567abda5645c0c59e875ae6aed73ee1bb7",
+      "duration_seconds": 31.008005,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 930,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    },
+    {
+      "path": "media/turn_006.mp4",
+      "bytes": 1663172,
+      "sha256": "69f4a433bb2a49ba62d8f2f8e1018fc86d8032010950ffcd4aabacd5dccd458a",
+      "duration_seconds": 25.3,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 759,
+      "frame_rate": 30.0,
+      "width": 640,
+      "height": 480,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    }
+  ]
+}

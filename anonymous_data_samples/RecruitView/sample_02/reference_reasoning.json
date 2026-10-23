@@ -1,0 +1,21 @@
+{
+  "sample_id": "RecruitView_02",
+  "source_type": "provided_person_trait_reference_reasoning",
+  "traits": {
+    "O": {
+      "reasoning": "Mixed weak evidence from qa_id 1, 4, and 6 reveals two separate facets of openness: the speaker explicitly states a general dislike of experimenting, suggesting low openness to unstructured novelty, but also reports engaging in creative, aesthetic activities (playing guitar, composing songs) and reading, which align with higher openness to established intellectual and artistic experiences. The conflicting evidence leads to a facet-specific inference rather than a global tendency."
+    },
+    "C": {
+      "reasoning": "Five weak evidence items from qa_id 1, 2, 3, 4, and 5 all point to a tendency toward intentional, structured action: the speaker uses cost-benefit reasoning for risk decisions, chooses planned calm discussion for conflict, values goal progress as a source of happiness, and prepared organized notes to mentor a junior. None of the items provide evidence of long-term persistence, follow-through, or unprompted self-discipline, so the inference is narrow to structured, context-specific intentionality."
+    },
+    "E": {
+      "reasoning": "Evidence from qa_id 6 notes that the speaker reports collaborating on song composition with a band, which suggests comfort with group social engagement, but the low-energy, neutral delivery without vocal animation limits the scope of the inference. This is weak evidence, so the inference is restricted to reported willingness to join group creative activities rather than a broad tendency toward high social expressivity or dominance."
+    },
+    "A": {
+      "reasoning": "Three separate weak evidence items from qa_id 2, 3, and 5 converge on the same prosocial orientation: the speaker explicitly endorses listening to others' perspectives, uses calm collaborative discussion to resolve team disagreements, and proactively shared notes to support a sick junior colleague. All items note neutral, low-warmth delivery, so the inference is limited to reported behavioral priorities rather than affective empathy or habitual warm expression."
+    },
+    "N": {
+      "reasoning": "Contextual evidence from qa_id 2 shows the speaker describes using calm, reasoned approaches to disagreement and displays a steady vocal tone and neutral facial expression during this discussion. The evidence is limited to the low-stakes interview context of describing past conflict, so the inference does not extend to trait-level emotional stability in high-stakes, real-time stressful situations."
+    }
+  }
+}

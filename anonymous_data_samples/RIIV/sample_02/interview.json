@@ -1,0 +1,197 @@
+{
+  "sample_id": "RIIV_02",
+  "dataset": "RIIV",
+  "timestamps_relative_to": "the video_path of each turn",
+  "turns": [
+    {
+      "turn_id": "1",
+      "question": "Do you like art?",
+      "answer_text": "Hmm, that's interesting. Depends on what. I like cinema, for instance, movies, music, but I don't know too much about paintings or modern art. I'm not too familiar with, so it depends on what kind of art.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        4.0,
+        5.0
+      ],
+      "answer_interval_seconds": [
+        5.5,
+        24.5
+      ]
+    },
+    {
+      "turn_id": "2",
+      "question": "Do you like to take photographs?",
+      "answer_text": "Yes. I wouldn't say the photographs are good, but I do enjoy taking pictures. Yeah.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        25.5,
+        27.2
+      ],
+      "answer_interval_seconds": [
+        27.5,
+        32.8
+      ]
+    },
+    {
+      "turn_id": "3",
+      "question": "Do you prefer to take photos of yourself or other things?",
+      "answer_text": "Of other things. It's kind of hard to take pictures of yourself unless it's a selfie and that's limited. So pictures of other things mostly.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        34.5,
+        37.8
+      ],
+      "answer_interval_seconds": [
+        38.1,
+        48.3
+      ]
+    },
+    {
+      "turn_id": "4",
+      "question": "Do you like animals?",
+      "answer_text": "I love animals. Land animals, friendly, so to speak, animals. Not insects and not anything from the ocean.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        51.5,
+        52.8
+      ],
+      "answer_interval_seconds": [
+        53.1,
+        60.5
+      ]
+    },
+    {
+      "turn_id": "5",
+      "question": "What is your favorite animal?",
+      "answer_text": "Probably a dog. Dogs, for obvious reasons, you can keep them as pets. In terms of non-domesticated animals, probably jaguars.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        62.5,
+        64.1
+      ],
+      "answer_interval_seconds": [
+        64.5,
+        74.2
+      ]
+    },
+    {
+      "turn_id": "6",
+      "question": "Do you have any animals in your home as pets?",
+      "answer_text": "Yes, I have two dogs. They're both from the shelter, the animal shelter, they're rescues. I've always had pets. Our family really likes keeping animals around.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        75.5,
+        77.2
+      ],
+      "answer_interval_seconds": [
+        77.5,
+        90.5
+      ]
+    },
+    {
+      "turn_id": "7",
+      "question": "What type of bags do you like?",
+      "answer_text": "I prefer purses that are a little bit on the larger side, just because I like to put everything of my life in my purse. So it ends up weighing maybe 20 kilos. Yeah, larger bags, probably structured, larger bags.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        93.2,
+        95.1
+      ],
+      "answer_interval_seconds": [
+        95.5,
+        114.5
+      ]
+    },
+    {
+      "turn_id": "8",
+      "question": "How often do you carry a bag when you go out?",
+      "answer_text": "Everyday. I think that's the case for most women. I think they carry a bag even if you go down to the grocery or the supermarket, you take your bag with you usually, right?",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        116.2,
+        118.5
+      ],
+      "answer_interval_seconds": [
+        118.8,
+        134.1
+      ]
+    },
+    {
+      "turn_id": "9",
+      "question": "What sort of bags do women like to buy?",
+      "answer_text": "It depends on your outfit. It depends on where you're going. For the day, if you're going to the office, you probably want something bigger that can fit your laptop, your phone, paperwork, everything that you might need during the day. If it's nighttime, you'd want something smaller, like a clutch, something more sleek, elegant. If you're traveling, you'd want a much bigger bag that's able to fit not just you, but all of your family's stuff as well.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        135.5,
+        137.8
+      ],
+      "answer_interval_seconds": [
+        138.2,
+        172.5
+      ]
+    },
+    {
+      "turn_id": "10",
+      "question": "What did you usually do on your birthday when you were a child?",
+      "answer_text": "When I was a child, in school, we had a uniform. So when it was your birthday, it was the one day of the year that you were allowed to wear whatever you wanted. So it was a big deal. I would pick out my outfit like two months in advance. It would be like a little dress, like a princessy frock, matching shoes, matching accessories for your hair. And then you would take some kind of chocolate or candy to school and give the candy out to other teachers and other kids in the school.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        176.5,
+        180.2
+      ],
+      "answer_interval_seconds": [
+        180.5,
+        212.1
+      ]
+    },
+    {
+      "turn_id": "11",
+      "question": "How do you normally celebrate your birthday now?",
+      "answer_text": "Very differently. Everyone's allowed to wear whatever they want now, so it doesn't have the same charm. I like to do a little dinner with my friends, something lowkey. I'm not a very big party person. So dinner is usually good, followed by probably like a games night or a movie night at home or at the cinema.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        212.8,
+        215.1
+      ],
+      "answer_interval_seconds": [
+        215.4,
+        237.5
+      ]
+    },
+    {
+      "turn_id": "12",
+      "question": "Do you think it's important to give someone a card on their birthday?",
+      "answer_text": "I think so, yes, because I'm quite sentimental and emotional. So I prefer more emotional, sentimental gifts. I think if someone takes the time to write something by hand for you, I hold on to stuff like that. So I think it's a very nice, thoughtful present.",
+      "video_path": "media/interview.mp4",
+      "question_interval_seconds": [
+        238.2,
+        241.5
+      ],
+      "answer_interval_seconds": [
+        241.8,
+        266.5
+      ]
+    }
+  ],
+  "media": [
+    {
+      "path": "media/interview.mp4",
+      "bytes": 30312926,
+      "sha256": "0ed1d7fa4fe40b735bc5034ed9b9ab0300360ee404fac51a8c8f97e4464fa730",
+      "duration_seconds": 307.247007,
+      "has_video": true,
+      "has_audio": true,
+      "content": "face_redacted_source_video",
+      "transcoded": true,
+      "frame_count": 9217,
+      "frame_rate": 30.0,
+      "width": 1920,
+      "height": 1080,
+      "face_redaction": {
+        "method": "opaque_head_region_mask",
+        "mask_color": "#202020",
+        "audio_payload_unchanged": true,
+        "presentation_times_unchanged": true
+      }
+    }
+  ]
+}
